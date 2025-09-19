@@ -1,11 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ecto</title>
+  <link rel="stylesheet" href="./style.css" />
 </head>
+
 <body>
+  <div class="wrapper">
     
+    <!-- HEADER -->
+    <header>
+      <div class="header-top">
+        <img class="logotipo" src="./assets/Logotipos.svg" alt="Logotipo Ecto">
+        <ul>
+        <li><a href="#">Falar com um especialista</a></li>
+      </ul>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="apresentacao">
+      
+      <!-- FORMULÁRIO -->
+      <section class="apresentacao_conteudo">
+        <h1 class="criar_conta">Criar uma nova conta</h1>
+        <img class="icone" src="./assets/icon.svg" alt="Ícone">
+
+        <h2 class="observacao">Preencha os campos do formulário abaixo para criar uma nova conta na Ecto Tools:</h2>
+
+        <form class="formulario-conta">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" placeholder="Escreva seu nome">
+
+          <label for="email">E-mail</label>
+          <input type="email" id="email" placeholder="exemplo@email.com">
+
+          <label for="telefone">Telefone</label>
+          <input type="tel" id="telefone" placeholder="+55 (00) 0000-0000">
+
+          <label for="senha">Senha</label>
+          <div class="senha-wrapper">
+            <input type="password" id="senha" placeholder="******">
+            <button type="button" class="mostrar-senha">Mostrar</button>
+          </div>
+
+          <label for="confirme_senha">Confirme sua senha</label>
+          <div class="senha-wrapper">
+            <input type="password" id="confirme_senha" placeholder="******">
+            <button type="button" class="mostrar-senha">Mostrar</button>
+          </div>
+
+          <button type="submit" class="conta">Cadastrar conta</button>
+        </form>
+      </section>
+
+      <!-- IMAGEM -->
+      <section class="apresentacao_imagem-wrapper">
+        <img class="apresentacao_imagem" src="./assets/image.png" alt="Imagem ilustrativa">
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <ul>
+        <li><a href="#">Políticas de privacidade</a></li>
+        <li><a href="#">Termos de uso</a></li>
+      </ul>
+    </footer>
+
+  </div>
 </body>
+
 </html>

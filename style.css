@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --cor-primaria: #090e29 
+  --cor-secundaria: #F7F7F7
+  --cor-terciaria: #2F6AF7
+  --cor-fundo: #FFFFFF 
+
+  --font-geral: 'Inter', sans-serif;
+  
+}
+
+body {
+  display: flex;
+  
+
+}
+
