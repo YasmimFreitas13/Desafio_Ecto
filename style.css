@@ -1,18 +1,205 @@
+/* ===== IMPORTAÇÃO DE FONTE ===== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+/* ===== VARIÁVEIS GLOBAIS ===== */
 :root {
-  --cor-primaria: #090e29 
-  --cor-secundaria: #F7F7F7
-  --cor-terciaria: #2F6AF7
-  --cor-fundo: #FFFFFF 
-
+  --cor-primaria: #090e29;
+  --cor-secundaria: #F7F7F7;
+  --cor-terciaria: #2F6AF7;
+  --cor-fundo: #FFFFFF;
   --font-geral: 'Inter', sans-serif;
-  
+}
+
+/* ===== RESET ===== */
+* {
+  margin: 2px;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-geral);
 }
 
 body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-primaria);
   display: flex;
-  
-
+  flex-direction: column;
+  min-height: 100vh;
 }
+
+/* ===== WRAPPER ===== */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ===== HEADER ===== */
+header {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+  gap: 200px
+}
+
+header img.logotipo {
+  width: 96.03px;
+  height: 28.57px;
+}
+
+.falar-especialista {
+  background: none;
+  border: none;
+  color: var(--cor-primaria);
+  font: var(--font-geral);
+  width: 176px;
+  height: 21px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.falar-especialista:hover {
+  opacity: 0.7;
+}
+
+/* ===== MAIN ===== */
+.apresentacao {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+/* ===== FORMULÁRIO ===== */
+.apresentacao_conteudo {
+  flex: 1;
+  min-width: 300px;
+}
+
+.apresentacao_conteudo h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.apresentacao_conteudo h2 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.formulario-conta {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formulario-conta label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.formulario-conta input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.senha-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.senha-wrapper input {
+  flex: 1;
+}
+
+.mostrar-senha {
+  margin-left: 10px;
+  padding: 10px 15px;
+  background-color: var(--cor-terciaria);
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.mostrar-senha:hover {
+  opacity: 0.8;
+}
+
+.conta {
+  padding: 12px 20px;
+  background-color: var(--cor-terciaria);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.conta:hover {
+  opacity: 0.9;
+}
+
+/* ===== IMAGEM ===== */
+.apresentacao_imagem-wrapper {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.apresentacao_imagem {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  margin-top: auto;
+  padding-top: 30px;
+  border-top: 1px solid #ddd;
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: var(--cor-primaria);
+  font-weight: 500;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 900px) {
+  .apresentacao {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .apresentacao_imagem-wrapper {
+    margin-top: 20px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+
 
