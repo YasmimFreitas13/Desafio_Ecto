@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ===== VARIÁVEIS GLOBAIS ===== */
+:root {
+  --cor-primaria: #090e29;
+  --cor-secundaria: #F7F7F7;
+  --cor-terciaria: #2F6AF7;
+  --cor-fundo: #FFFFFF;
+  --cor-cinza: #8C8C8F;
+  --cor-borda: #EBEAED;
+  --font-geral: 'Inter', sans-serif;
+}
+
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--cor-fundo);
+  font-family: var(--font-geral); 
+  color: var(--cor-primaria);
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  min-height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== CONTEÚDO PRINCIPAL (APRESENTAÇÃO) ===== */
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 48px 112px;
+  max-width: 900px;
+  justify-content: space-between;
+}
+
+/* ===== CABEÇALHO ===== */
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logotipo {
+  width: 96.03px;
+  height: 28.57px;
+}
+
+.falar-especialista {
+  background: none;
+  border: none;
+  color: var(--cor-primaria);
+  font-family: var(--font-geral);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 8px;
+  transition: opacity 0.2s;
+}
+
+.falar-especialista:hover {
+  opacity: 0.8;
+}
+
+/* ===== FORMULÁRIO ===== */
+.apresentacao__conteudo {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.icone {
+  width: 88px;
+  height: 88px;
+  border-radius: 96px;
+  border: 1px solid var(--cor-borda);
+  padding: 16px;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.criar-conta {
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.observacao {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 24px;
+  color: var(--cor-cinza);
+}
+
+.formulario-conta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formulario-conta label {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.formulario-conta input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--cor-cinza);
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.formulario-conta input::placeholder {
+  color: var(--cor-cinza);
+}
+
+.senha-wrapper {
+  display: flex;
+  gap: 16px;
+}
+
+.input-grupo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 0.5rem;
+}
+
+.input-campo {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-campo input {
+  padding-right: 6rem;
+}
+
+.mostrar-senha {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--cor-primaria);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.mostrar-senha:hover {
+  color: var(--cor-terciaria);
+}
+
+.conta {
+  width: 100%;
+  padding: 16px 24px;
+  background-color: var(--cor-terciaria);
+  color: var(--cor-fundo);
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: opacity 0.2s;
+}
+
+.conta:hover {
+  opacity: 0.9;
+}
+
+/* ===== IMAGEM ILUSTRATIVA ===== */
+.apresentacao__imagem-wrapper {
+  flex: 1;
+  background-color: var(--cor-terciaria);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  height: 900px;
+  min-width: 400px;
+}
+
+.apresentacao__imagem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 992px;
+  object-fit: contain;
+}
+
+.imagem__texto {
+  z-index: 10;
+  color: #fff;
+}
+
+.imagem__texto h3 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.imagem__texto p {
+  width: 528px;
+  height: 72px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* ===== RODAPÉ ===== */
+.rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  width: 100%;
+  border-top: 1px solid var(--cor-borda);
+  margin-top: 40px;
+}
+
+.rodape__links ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.rodape__links a {
+  text-decoration: none;
+  color: var(--cor-primaria);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.rodape__data p {
+  font-size: 14px;
+  color: var(--cor-cinza);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 1200px) {
+  .conteudo {
+    padding: 48px 40px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .conteudo {
+    padding-bottom: 0;
+  }
+
+  .apresentacao__imagem-wrapper {
+    height: 400px;
+    border-radius: 32px;
+    margin: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    display: block;
+    min-height: auto;
+  }
+
+  .wrapper {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+  }
+
+  .container {
+    flex-direction: column;
+    height: auto;
+    padding-bottom: 24px;
+  }
+
+  .conteudo {
+    padding: 24px 20px 0;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .apresentacao__imagem-wrapper {
+    display: none;
+  }
+
+  .cabecalho {
+    justify-content: center;
+  }
+
+  .falar-especialista {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px;
+  }
+
+  .icone {
+    width: 72px;
+    height: 72px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px;
+  }
+
+  .criar-conta {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .observacao {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .formulario-conta {
+    width: 100%;
+  }
+
+  .senha-wrapper {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .input-grupo {
+    width: 100%;
+    flex: auto;
+  }
+
+  .conta {
+    margin-top: 16px;
+  }
+
+  .rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 24px;
+  }
+
+  .rodape__links ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 0;
+  }
+}

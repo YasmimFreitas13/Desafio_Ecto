@@ -1,0 +1,29 @@
+<svg width="88" height="89" viewBox="0 0 88 89" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.785004" width="87" height="87" rx="43.5" fill="url(#paint0_linear_2628_18217)"/>
+<rect x="0.5" y="0.785004" width="87" height="87" rx="43.5" stroke="url(#paint1_linear_2628_18217)"/>
+<g filter="url(#filter0_d_2628_18217)">
+<rect x="16" y="16.285" width="56" height="56" rx="28" fill="white"/>
+<rect x="16.5" y="16.785" width="55" height="55" rx="27.5" stroke="#E2E4E9"/>
+<path d="M46.1 46.6496V48.8441C45.1497 48.5081 44.1326 48.405 43.1342 48.5436C42.1358 48.6821 41.1852 49.0582 40.3622 49.6402C39.5393 50.2223 38.868 50.9933 38.4047 51.8885C37.9415 52.7837 37.6998 53.777 37.7 54.785L35.6 54.784C35.5997 53.5018 35.8929 52.2366 36.4571 51.0852C37.0214 49.9339 37.8417 48.927 38.8552 48.1417C39.8688 47.3564 41.0486 46.8135 42.3044 46.5547C43.5602 46.2959 44.8586 46.328 46.1 46.6486V46.6496ZM44 45.335C40.5193 45.335 37.7 42.5157 37.7 39.035C37.7 35.5543 40.5193 32.735 44 32.735C47.4808 32.735 50.3 35.5543 50.3 39.035C50.3 42.5157 47.4808 45.335 44 45.335ZM44 43.235C46.3205 43.235 48.2 41.3555 48.2 39.035C48.2 36.7145 46.3205 34.835 44 34.835C41.6795 34.835 39.8 36.7145 39.8 39.035C39.8 41.3555 41.6795 43.235 44 43.235ZM50.9153 49.535L48.9949 47.6156L50.4806 46.1299L54.9347 50.585L50.4806 55.0401L48.9949 53.5544L50.9153 51.635H47.15V49.535H50.9153Z" fill="#525866"/>
+</g>
+<defs>
+<filter id="filter0_d_2628_18217" x="12" y="14.285" width="64" height="64" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="2"/>
+<feGaussianBlur stdDeviation="2"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.105882 0 0 0 0 0.109804 0 0 0 0 0.113725 0 0 0 0.04 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2628_18217"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2628_18217" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_2628_18217" x1="44" y1="0.285004" x2="44" y2="88.285" gradientUnits="userSpaceOnUse">
+<stop stop-color="#E4E5E7" stop-opacity="0.48"/>
+<stop offset="1" stop-color="#F7F8F8" stop-opacity="0"/>
+<stop offset="1" stop-color="#E4E5E7" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint1_linear_2628_18217" x1="44" y1="0.285004" x2="44" y2="88.285" gradientUnits="userSpaceOnUse">
+<stop stop-color="#E4E5E7"/>
+<stop offset="0.765625" stop-color="#E4E5E7" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>
