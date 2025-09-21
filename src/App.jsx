@@ -4,9 +4,11 @@ import logotipoSvg from './assets/Logotipos.svg';
 import iconSvg from './assets/icon.svg';
 import imagePng from './assets/image.png';
 
+
 function App() {
   // Estados para os campos do formulário
   const [nome, setNome] = useState('');
+  const [sobrenome, setSobrenome] = useState(''); // NOVO ESTADO
   const [email, setEmail] = useState('');
   const [telefone, setTelefone] = useState('');
   const [senha, setSenha] = useState('');
@@ -28,6 +30,9 @@ function App() {
     switch (id) {
       case 'nome':
         setNome(value);
+        break;
+      case 'sobrenome': // NOVO CASE
+        setSobrenome(value);
         break;
       case 'email':
         setEmail(value);
@@ -57,7 +62,8 @@ function App() {
   // Função de validação dos campos
   const validate = () => {
     const newErrors = {};
-    if (!nome) newErrors.nome = 'Nome completo é obrigatório.';
+    if (!nome) newErrors.nome = 'Nome é obrigatório.'; // ALTERAÇÃO
+    if (!sobrenome) newErrors.sobrenome = 'Sobrenome é obrigatório.'; // NOVA VALIDAÇÃO
     if (!email) {
       newErrors.email = 'E-mail é obrigatório.';
     } else if (!/\S+@\S+\.\S+/.test(email)) {
@@ -92,12 +98,14 @@ function App() {
     setSuccess(false);
     setLoading(true);
 
+    // Mapeando os dados para os campos da API
     const formData = {
       name: nome,
+      last_name: sobrenome, // NOVO CAMPO
       email: email,
       phone: telefone,
       password: senha,
-      confirm_password: confirmeSenha
+      // O campo confirm_password não é necessário na requisição da API
     };
 
     try {
@@ -118,7 +126,9 @@ function App() {
       setSuccess(true);
       console.log('Conta cadastrada com sucesso!');
       
+      // Limpar os campos após o sucesso
       setNome('');
+      setSobrenome(''); // LIMPAR O NOVO ESTADO
       setEmail('');
       setTelefone('');
       setSenha('');
@@ -148,9 +158,18 @@ function App() {
             <h2 className="observacao">Preencha os campos do formulário abaixo para criar uma nova conta na Ecto Tools:</h2>
 
             <form className="formulario-conta" onSubmit={handleSubmit}>
-              <label htmlFor="nome">Nome</label>
-              <input type="text" id="nome" placeholder="Escreva seu nome" value={nome} onChange={handleInputChange} />
-              {errors.nome && <p className="error-message">{errors.nome}</p>}
+              <div className="nome-wrapper"> {/* NOVO WRAPPER PARA OS CAMPOS DE NOME */}
+                <div className="input-grupo">
+                  <label htmlFor="nome">Nome</label>
+                  <input type="text" id="nome" placeholder="Escreva seu nome" value={nome} onChange={handleInputChange} />
+                  {errors.nome && <p className="error-message">{errors.nome}</p>}
+                </div>
+                <div className="input-grupo">
+                  <label htmlFor="sobrenome">Sobrenome</label>
+                  <input type="text" id="sobrenome" placeholder="Escreva seu sobrenome" value={sobrenome} onChange={handleInputChange} />
+                  {errors.sobrenome && <p className="error-message">{errors.sobrenome}</p>}
+                </div>
+              </div>
 
               <label htmlFor="email">E-mail</label>
               <input type="email" id="email" placeholder="exemplo@email.com" value={email} onChange={handleInputChange} />

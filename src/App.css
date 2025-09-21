@@ -2,12 +2,13 @@
 
 /* ===== VARIÁVEIS GLOBAIS ===== */
 :root {
+  color-scheme: light dark; /*para suportar ambos */
+  --cor-fundo: #FFFFFF;
   --cor-primaria: #090e29;
   --cor-secundaria: #F7F7F7;
-  --cor-terciaria: #2F6AF7;
-  --cor-fundo: #FFFFFF;
   --cor-cinza: #8C8C8F;
   --cor-borda: #EBEAED;
+  --cor-terciaria: #2F6AF7;
   --font-geral: 'Inter', sans-serif;
 }
 
@@ -20,11 +21,11 @@
 
 body {
   background-color: var(--cor-fundo);
-  font-family: var(--font-geral); 
+  font-family: var(--font-geral);
   color: var(--cor-primaria);
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   min-height: 100vh;
 }
 
@@ -65,7 +66,8 @@ body {
 .logotipo {
   width: 96.03px;
   height: 28.57px;
-}
+  }
+
 
 .falar-especialista {
   background: none;
@@ -139,6 +141,11 @@ body {
   color: var(--cor-cinza);
 }
 
+.nome-wrapper { /* NOVO ESTILO */
+  display: flex;
+  gap: 16px;
+}
+
 .senha-wrapper {
   display: flex;
   gap: 16px;
@@ -198,6 +205,12 @@ body {
   opacity: 0.9;
 }
 
+.error-message { /* Adicionado para garantir o estilo, se ainda não existir */
+  color: #d9534f;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
 /* ===== IMAGEM ILUSTRATIVA ===== */
 .apresentacao__imagem-wrapper {
   flex: 1;
@@ -211,6 +224,17 @@ body {
   overflow: hidden;
   height: 900px;
   min-width: 400px;
+}
+
+.apresentacao__imagem-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, #00164A 100%);
+  z-index: 1;
 }
 
 .apresentacao__imagem {
@@ -356,6 +380,11 @@ body {
     width: 100%;
   }
 
+  .nome-wrapper { /* NOVO ESTILO */
+    flex-direction: column;
+    gap: 10px;
+  }
+
   .senha-wrapper {
     flex-direction: column;
     gap: 10px;
@@ -384,5 +413,35 @@ body {
     justify-content: center;
     gap: 8px;
     padding: 0;
+  }
+}
+
+/* ===== ESTILOS PARA MODO ESCURO (OPCIONAL, MAS RECOMENDADO) ===== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cor-fundo: #242527;
+    --cor-primaria: #F7F7F7;
+    --cor-secundaria: #2f3136;
+    --cor-cinza: #a0a0a0;
+    --cor-borda: #444444;
+  }
+
+  .formulario-conta input {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    border: 1px solid var(--cor-borda);
+  }
+
+  .formulario-conta input::placeholder {
+    color: var(--cor-cinza);
+  }
+
+  .icone {
+    border: 1px solid var(--cor-borda);
+  }
+
+  /* 🔹 Forçar botão com texto branco no modo escuro */
+  .conta {
+    color: #FFFFFF;
   }
 }
