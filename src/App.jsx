@@ -109,50 +109,44 @@ function App() {
     };
 
     try {
-      const response = await fetch('https://flow.ecto.tools/webhook/79e12507-621e-4880-bb5a-9fd8c15a4b61', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': '9fMD5VvEzQShteBFutyWw33f'
-        },
-        body: JSON.stringify(formData),
-      });
+  const response = await fetch('https://flow.ecto.tools/webhook/79e12507-621e-4880-bb5a-9fd8c15a4b61', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': '9fMD5VvEzQShteBFutyWw33f'
+    },
+    body: JSON.stringify(formData),
+  });
 
-      // Primeiro, verifique se a resposta é um JSON válido antes de tentar analisar.
-      // O método response.headers.get('content-type') retorna o tipo de conteúdo da resposta.
-      const contentType = response.headers.get('content-type');
-      let responseData;
-
-      if (contentType && contentType.indexOf('application/json') !== -1) {
-        responseData = await response.json();
-      } else {
-        responseData = await response.text(); // Lê como texto se não for JSON
-      }
-
-      if (!response.ok) {
-        // Se a resposta não for OK, trate o erro com a resposta que obtivemos
-        const errorMessage = typeof responseData === 'object' && responseData.message ? responseData.message : 'Erro ao cadastrar a conta.';
-        throw new Error(errorMessage);
-      }
-
-      setSuccess(true);
-      console.log('Conta cadastrada com sucesso!');
-      
-      // Limpar os campos após o sucesso
-      setNome('');
-      setSobrenome('');
-      setEmail('');
-      setTelefone('');
-      setSenha('');
-      setConfirmeSenha('');
-      setErrors({});
-      
-    } catch (err) {
-      setApiError(err.message);
-      console.error('Falha no envio:', err);
-    } finally {
-      setLoading(false);
+  if (!response.ok) {
+    let errorMessage = 'Erro ao cadastrar a conta.';
+    try {
+      const errorData = await response.json();
+      if (errorData.message) errorMessage = errorData.message;
+    } catch (jsonError) {
+      console.warn('Resposta da API não é JSON válido', jsonError);
     }
+    throw new Error(errorMessage);
+  }
+
+  setSuccess(true);
+  console.log('Conta cadastrada com sucesso!');
+  
+  setNome('');
+  setSobrenome('');
+  setEmail('');
+  setTelefone('');
+  setSenha('');
+  setConfirmeSenha('');
+  setErrors({});
+
+} catch (err) {
+  setApiError(err.message);
+  console.error('Falha no envio:', err);
+} finally {
+  setLoading(false);
+}
+
   };
 
   return (
