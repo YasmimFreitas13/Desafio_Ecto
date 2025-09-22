@@ -118,9 +118,21 @@ function App() {
         body: JSON.stringify(formData),
       });
 
+      // Primeiro, verifique se a resposta é um JSON válido antes de tentar analisar.
+      // O método response.headers.get('content-type') retorna o tipo de conteúdo da resposta.
+      const contentType = response.headers.get('content-type');
+      let responseData;
+
+      if (contentType && contentType.indexOf('application/json') !== -1) {
+        responseData = await response.json();
+      } else {
+        responseData = await response.text(); // Lê como texto se não for JSON
+      }
+
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'Erro ao cadastrar a conta.');
+        // Se a resposta não for OK, trate o erro com a resposta que obtivemos
+        const errorMessage = typeof responseData === 'object' && responseData.message ? responseData.message : 'Erro ao cadastrar a conta.';
+        throw new Error(errorMessage);
       }
 
       setSuccess(true);
@@ -128,7 +140,7 @@ function App() {
       
       // Limpar os campos após o sucesso
       setNome('');
-      setSobrenome(''); // LIMPAR O NOVO ESTADO
+      setSobrenome('');
       setEmail('');
       setTelefone('');
       setSenha('');
